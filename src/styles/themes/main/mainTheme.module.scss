@@ -1,0 +1,48 @@
+// primary color
+$primary50: #f3f8fc;
+$primary100: #e6f0f8;
+$primary200: #c8e0ef;
+$primary300: #97c7e2;
+$primary400: #60a9d0;
+$primary500: #3b8ebc;
+$primary600: #2b729e;
+$primary700: #22577a;
+$primary800: #214e6b;
+$primary900: #20425a;
+
+$secondary50: #f1fcf7;
+$secondary100: #d1f6e9;
+$secondary200: #a3ecd3;
+$secondary300: #a3ecd3;
+$secondary400: #3ab795;
+$secondary500: #26a685;
+$secondary600: #1b866c;
+$secondary700: #1a6b59;
+$secondary800: #195649;
+$secondary900: #19483e;
+
+:export {
+  // primary color
+  primary50: $primary50;
+  primary100: $primary100;
+  primary200: $primary200;
+  primary300: $primary300;
+  primary400: $primary400;
+  primary500: $primary500;
+  primary600: $primary600;
+  primary700: $primary700;
+  primary800: $primary800;
+  primary900: $primary900;
+
+  // secondary color
+  secondary50: $secondary50;
+  secondary100: $secondary100;
+  secondary200: $secondary200;
+  secondary300: $secondary300;
+  secondary400: $secondary400;
+  secondary500: $secondary500;
+  secondary600: $secondary600;
+  secondary700: $secondary700;
+  secondary800: $secondary800;
+  secondary900: $secondary900;
+}

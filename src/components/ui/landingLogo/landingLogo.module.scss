@@ -1,0 +1,11 @@
+.landingLogo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  span {
+    font-size: 11px;
+    font-weight: 300;
+    color: white;
+  }
+}

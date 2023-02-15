@@ -1,6 +1,11 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import "@src/styles/globals.scss";
+import ThemeController from "@src/styles/themes/themeController";
+import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <ThemeController>
+      <Component {...pageProps} />
+    </ThemeController>
+  );
 }
