@@ -1,6 +1,7 @@
 import { createTheme } from "@mui/material/styles";
 
 import colors from "./mainTheme.module.scss";
+import { ICustomTypo } from "./mainTheme.types";
 
 const mainTheme = createTheme({
   palette: {
@@ -33,7 +34,21 @@ const mainTheme = createTheme({
   },
   typography: {
     fontFamily: "IRANYekanX",
-  },
+
+    subtitle1: {
+      fontSize: "11px",
+      fontWeight: 300,
+      component: "span",
+      color: colors.whiteText,
+    },
+    subtitle2: {
+      fontSize: "13px",
+      fontWeight: 300,
+      component: "span",
+      color: colors.whiteText,
+    },
+    PlgLight: { color: "red" },
+  } as ICustomTypo,
 });
 
 export default mainTheme;

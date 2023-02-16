@@ -21,6 +21,9 @@ $secondary700: #1a6b59;
 $secondary800: #195649;
 $secondary900: #19483e;
 
+// typography
+$whiteText: #ffffff;
+
 :export {
   // primary color
   primary50: $primary50;
@@ -45,4 +48,7 @@ $secondary900: #19483e;
   secondary700: $secondary700;
   secondary800: $secondary800;
   secondary900: $secondary900;
+
+  // typography
+  whiteText: $whiteText;
 }
