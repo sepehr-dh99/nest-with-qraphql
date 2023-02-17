@@ -4,6 +4,7 @@ import colors from "./mainTheme.module.scss";
 //import { ICustomTypo } from "./mainTheme.types";
 
 const mainTheme = createTheme({
+  direction: "rtl",
   palette: {
     primary: {
       main: colors.primary500,
@@ -34,7 +35,10 @@ const mainTheme = createTheme({
   },
   typography: {
     fontFamily: "IRANYekanX",
-
+    h3: {
+      fontSize: "20px",
+      fontWeight: 800
+    },
     subtitle1: {
       fontSize: "11px",
       fontWeight: 300,
@@ -47,9 +51,13 @@ const mainTheme = createTheme({
       component: "span",
       color: colors.whiteText
     },
-    PlgLight: {
+    pLgLight: {
       fontSize: "16px",
       fontWeight: 300
+    },
+    pSmRegular: {
+      fontSize: "12px",
+      fontWeight: 400
     }
   }
 });

@@ -7,7 +7,7 @@ const PleaseWaitSpinner = ({ sx }: Partial<IPleaseWaitSpinner>) => {
 
   return (
     <Stack alignItems="center" justifyContent="center" sx={sx}>
-      <Typography variant="PlgLight" sx={{ color: theme.palette.common.white }}>
+      <Typography variant="pLgLight" sx={{ color: theme.palette.common.white }}>
         لطفا شکیبا باشید
       </Typography>
       <Loading />
