@@ -1,14 +1,24 @@
+import { Stack } from "@mui/material";
 import { styled } from "@mui/system";
+import Image from "next/image";
 
-const AuthLayoutStyle = styled("div")(({ theme }) => ({
+// Auth Layout
+const AuthLayoutStyle = styled(Stack)(({ theme }) => ({
+  justifyContent: "space-around",
+
   position: "relative",
-  display: "flex",
+
   maxWidth: "480px",
   margin: "0 auto",
   minHeight: "100vh",
-  flexDirection: "column",
-  justifyContent: "space-around",
-  backgroundColor: theme.palette.primary.main,
+
+  backgroundColor: theme.palette.primary.main
 }));
 
-export default AuthLayoutStyle;
+// curve shapes
+const CurveShapeStyle = styled(Image)(() => ({
+  position: "absolute",
+  zIndex: 0
+}));
+
+export { AuthLayoutStyle, CurveShapeStyle };
