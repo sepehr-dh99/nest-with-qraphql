@@ -1,7 +1,7 @@
 import { createTheme } from "@mui/material/styles";
 
 import colors from "./mainTheme.module.scss";
-import { ICustomTypo } from "./mainTheme.types";
+//import { ICustomTypo } from "./mainTheme.types";
 
 const mainTheme = createTheme({
   palette: {
@@ -16,7 +16,7 @@ const mainTheme = createTheme({
       600: colors.primary600,
       700: colors.primary700,
       800: colors.primary800,
-      900: colors.primary900,
+      900: colors.primary900
     },
     secondary: {
       main: colors.secondary500,
@@ -29,8 +29,8 @@ const mainTheme = createTheme({
       600: colors.secondary600,
       700: colors.secondary700,
       800: colors.secondary800,
-      900: colors.secondary900,
-    },
+      900: colors.secondary900
+    }
   },
   typography: {
     fontFamily: "IRANYekanX",
@@ -39,16 +39,19 @@ const mainTheme = createTheme({
       fontSize: "11px",
       fontWeight: 300,
       component: "span",
-      color: colors.whiteText,
+      color: colors.whiteText
     },
     subtitle2: {
       fontSize: "13px",
       fontWeight: 300,
       component: "span",
-      color: colors.whiteText,
+      color: colors.whiteText
     },
-    PlgLight: { color: "red" },
-  } as ICustomTypo,
+    PlgLight: {
+      fontSize: "16px",
+      fontWeight: 300
+    }
+  }
 });
 
 export default mainTheme;

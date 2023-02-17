@@ -13,7 +13,9 @@ export default function Home() {
     <AuthLayout>
       {/* Bottom sheet */}
 
-      <PleaseWaitSpinner sx={{ position: "absolute", bottom: 0, left: 0, right: 0 }} />
+      <PleaseWaitSpinner
+        sx={{ position: "absolute", bottom: 0, left: 0, right: 0 }}
+      />
       <BottomSheet transparent>
         <Box>Test Bottom Sheet</Box>
       </BottomSheet>
