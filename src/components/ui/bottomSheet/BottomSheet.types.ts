@@ -1,7 +1,7 @@
 export interface IBottomSheet {
+  setOpen?: (state: boolean) => void;
   children: JSX.Element;
   transparent?: boolean;
   open?: boolean;
-  // TODO: maybe is not correct !!
-  setOpen?: Function;
+  sx?: any;
 }

@@ -1,24 +1,14 @@
-import { Box } from "@mui/system";
-import BottomSheet from "@src/components/ui/bottomSheet/BottomSheet";
+import { ReactNode } from "react";
 
-import PleaseWaitSpinner from "@src/components/ui/pleaseWaitSpinner/pleaseWaitSpinner";
-import AuthLayout from "@src/layouts/auth/auth";
+import Layout from "@src/layouts/Layout";
 
-export default function Home() {
-  // root styles until desktop version
+const HomePage = () => {
+  return <>Home Page</>;
+};
 
-  // method to open bottom sheet
+// TODO :  must be check !!!
+HomePage.getLayout = (page: ReactNode | any) => {
+  return <Layout variant="auth">{page}</Layout>;
+};
 
-  return (
-    <AuthLayout>
-      {/* Bottom sheet */}
-
-      <PleaseWaitSpinner
-        sx={{ position: "absolute", bottom: 0, left: 0, right: 0 }}
-      />
-      <BottomSheet transparent>
-        <Box>Test Bottom Sheet</Box>
-      </BottomSheet>
-    </AuthLayout>
-  );
-}
+export default HomePage;
