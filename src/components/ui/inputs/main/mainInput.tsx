@@ -1,5 +1,5 @@
 import { InputBase, Stack, TextField, TextFieldProps, Typography } from '@mui/material';
-import StyledMainInput from './MainInput.styles';
+import StyledMainInput from './mainInput.styles';
 
 const MainInput = ({ label, ...params }: TextFieldProps) => {
   return (

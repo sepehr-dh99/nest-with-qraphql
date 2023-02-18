@@ -6,7 +6,7 @@ import Layout from '@src/layouts/Layout';
 import { AlertProps } from '@mui/material/Alert';
 import { IRPhoneNumberReg } from '@src/utils/regex';
 import { Snackbar, Stack, Typography } from '@mui/material';
-import MainInput from '@src/components/ui/inputs/main/MainInput';
+import MainInput from '@src/components/ui/inputs/main/mainInput';
 import MainButton from '@src/components/ui/button/main/mainButton';
 import BottomSheet from '@src/components/ui/bottomSheet/BottomSheet';
 import StyledAlert from '@src/components/ui/alert/main/mainAlert.styles';

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
-import PleaseWaitPage from "@src/components/pages/pleaseWait/PleaseWait";
+import PleaseWaitPage from "@src/components/pages/pleaseWait/pleaseWait";
 
 // TODO: must be complete !!!
 const GuestGuard = ({ children }: { children: React.ReactElement }) => {
