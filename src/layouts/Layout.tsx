@@ -1,22 +1,20 @@
-import React from "react";
+import React from 'react';
 
-import AuthLayout from "./auth/auth";
-import AuthGuard from "./guards/auth/AuthGuard";
-import GuestGuard from "./guards/guest/GuestGuard";
-import { ILayout } from "./Layout.types";
+import AuthLayout from './auth/auth';
+import AuthGuard from './guards/auth/AuthGuard';
+import GuestGuard from './guards/guest/GuestGuard';
+import { ILayout } from './Layout.types';
 
-const Layout = ({ variant = "guest", children }: ILayout) => {
-  console.log("variant:", variant);
-
+const Layout = ({ variant = 'guest', children }: ILayout) => {
   switch (variant) {
-    case "guest":
+    case 'guest':
       return (
         <GuestGuard>
           <AuthLayout>{children}</AuthLayout>
         </GuestGuard>
       );
 
-    case "auth":
+    case 'auth':
       return <AuthGuard>{children}</AuthGuard>;
 
     default:

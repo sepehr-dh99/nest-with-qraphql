@@ -1,14 +1,50 @@
-import React, { ReactNode } from 'react';
+import React, { FormEvent, ReactNode, useState } from 'react';
 
-import BottomSheet from '@src/components/ui/bottomSheet/BottomSheet';
-import MainInput from '@src/components/ui/inputs/main/MainInput';
-import { Button, Stack, TextField, Typography, useTheme } from '@mui/material';
+import * as Yup from 'yup';
+import { useFormik } from 'formik';
 import Layout from '@src/layouts/Layout';
+import { AlertProps } from '@mui/material/Alert';
+import { IRPhoneNumberReg } from '@src/utils/regex';
+import { Snackbar, Stack, Typography } from '@mui/material';
+import MainInput from '@src/components/ui/inputs/main/MainInput';
+import MainButton from '@src/components/ui/button/main/mainButton';
+import BottomSheet from '@src/components/ui/bottomSheet/BottomSheet';
+import StyledAlert from '@src/components/ui/alert/main/mainAlert.styles';
+
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
+  return <StyledAlert elevation={6} ref={ref} variant='filled' {...props} />;
+});
+
+const validationSchema = Yup.object().shape({
+  phoneNumber: Yup.string()
+    .required('شماره تماس را وارد کنید')
+    .matches(IRPhoneNumberReg, { message: 'شماره تماس را به درستی وارد کنید' }),
+});
+
+const SNACKBAR_AUTOCLOSE_MS = 3000;
 
 const LoginPage = () => {
-  const theme = useTheme();
+  const [openSnackBar, setOpenSnackBar] = useState(false);
 
-  console.log('theme:', theme.palette);
+  const formik = useFormik({
+    validationSchema: validationSchema,
+    initialValues: {
+      phoneNumber: '',
+    },
+    onSubmit: (values) => {
+      console.log(values);
+    },
+  });
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    formik.handleSubmit();
+    setOpenSnackBar(!!formik.errors.phoneNumber);
+  };
+
+  const handleClose = () => {
+    setOpenSnackBar(false);
+  };
 
   return (
     <BottomSheet open={true} transparent>
@@ -21,13 +57,31 @@ const LoginPage = () => {
           </Typography>
         </Stack>
 
-        <Stack spacing={2}>
-          <MainInput label='شماره همراه' placeholder='مثلا ۰۹۱۲۳۴۵۶۷۸۹' />
-          <Button variant='contained' size='xLarge'>
-            مرحله بعدی
-          </Button>
-        </Stack>
+        <form onSubmit={handleSubmit}>
+          <Stack spacing={2}>
+            <MainInput
+              id='phoneNumber'
+              name='phoneNumber'
+              label='شماره همراه'
+              placeholder='مثلا ۰۹۱۲۳۴۵۶۷۸۹'
+              onChange={formik.handleChange}
+              value={formik.values.phoneNumber}
+              error={!!formik.errors.phoneNumber}
+            />
+            <MainButton type='submit' variant='contained' size='xLarge'>
+              مرحله بعدی
+            </MainButton>
+          </Stack>
+        </form>
       </Stack>
+
+      {/* snackbar */}
+      {/* TODO: Fix positioning and width of the snackbar  */}
+      <Snackbar open={openSnackBar} autoHideDuration={SNACKBAR_AUTOCLOSE_MS} onClose={handleClose}>
+        <Alert severity='error' sx={{ width: '100%' }} onClose={handleClose}>
+          شماره همراه را به درستی وارد کنید
+        </Alert>
+      </Snackbar>
     </BottomSheet>
   );
 };
