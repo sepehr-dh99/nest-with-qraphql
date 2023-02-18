@@ -1,30 +1,32 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode } from 'react';
 
-import BottomSheet from "@src/components/ui/bottomSheet/BottomSheet";
-import MainInput from "@src/components/ui/inputs/main/Main";
-import { Button, Stack, Typography } from "@mui/material";
-import Layout from "@src/layouts/Layout";
+import BottomSheet from '@src/components/ui/bottomSheet/BottomSheet';
+import MainInput from '@src/components/ui/inputs/main/MainInput';
+import { Button, Stack, TextField, Typography, useTheme } from '@mui/material';
+import Layout from '@src/layouts/Layout';
 
 const LoginPage = () => {
+  const theme = useTheme();
+
+  console.log('theme:', theme.palette);
+
   return (
     <BottomSheet open={true} transparent>
-      <Stack spacing={2.5} sx={{ mb: 4 }}>
-        {/* TODO: Must be create Layout TRL provider */}
-        <Typography variant="h3" sx={{ color: "#474747" }}>
-          به هم میهن خوش آمدید
-        </Typography>
-        <Typography variant="pSmRegular">
-          لطفاً شماره موبایل‌ خود را وارد کنید تا کد فعال‌سازی برا‌یتان ارسال
-          شود
-        </Typography>
-      </Stack>
+      <Stack sx={{ height: '55vh' }}>
+        <Stack spacing={2.5} sx={{ mb: 3 }}>
+          {/* TODO: Must be create Layout TRL provider */}
+          <Typography variant='h3'>به هم میهن خوش آمدید</Typography>
+          <Typography variant='pSmRegular'>
+            لطفاً شماره موبایل‌ خود را وارد کنید تا کد فعال‌سازی برا‌یتان ارسال شود
+          </Typography>
+        </Stack>
 
-      <Stack spacing={2}>
-        <MainInput />
-        {/* TODO: must be add custom size in theme / this height must be equal input */}
-        <Button variant="contained" size="large">
-          مرحله بعدی
-        </Button>
+        <Stack spacing={2}>
+          <MainInput label='شماره همراه' placeholder='مثلا ۰۹۱۲۳۴۵۶۷۸۹' />
+          <Button variant='contained' size='xLarge'>
+            مرحله بعدی
+          </Button>
+        </Stack>
       </Stack>
     </BottomSheet>
   );
@@ -32,7 +34,7 @@ const LoginPage = () => {
 
 // TODO :  must be check !!!
 LoginPage.getLayout = (page: ReactNode | any) => {
-  return <Layout variant="guest">{page}</Layout>;
+  return <Layout variant='guest'>{page}</Layout>;
 };
 
 export default LoginPage;

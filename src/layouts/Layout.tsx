@@ -5,7 +5,7 @@ import AuthGuard from "./guards/auth/AuthGuard";
 import GuestGuard from "./guards/guest/GuestGuard";
 import { ILayout } from "./Layout.types";
 
-const Layout = ({ variant = "auth", children }: ILayout) => {
+const Layout = ({ variant = "guest", children }: ILayout) => {
   console.log("variant:", variant);
 
   switch (variant) {
