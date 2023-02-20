@@ -1,3 +1,3 @@
 export type TStyledLogoAnimation = {
-  isanimated?: 'true' | 'false';
+  animated?: 'true' | 'false';
 };

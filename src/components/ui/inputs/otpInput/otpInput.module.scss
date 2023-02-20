@@ -1,0 +1,24 @@
+.otp-group {
+  display: flex;
+  width: 100%;
+  max-width: 360px;
+  justify-content: space-around;
+  column-gap: 10px;
+  direction: ltr !important;
+  margin: 40px 0 35% 0;
+}
+
+.otp-input {
+  width: 38.67px;
+  height: 49px;
+  border: none;
+  border-bottom: 3px solid #eee;
+  color: #a3a3a3;
+  text-align: center;
+  font-size: 27px;
+
+  &:focus {
+    border-color: #3885b0;
+    outline: none;
+  }
+}

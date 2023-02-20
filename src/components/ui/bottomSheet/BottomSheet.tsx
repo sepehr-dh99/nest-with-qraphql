@@ -11,14 +11,15 @@ import { IBottomSheet } from './BottomSheet.types';
 const BottomSheet = ({
   children,
   transparent = false,
-  open = false,
+  isOpen = false,
   setOpen = () => {},
   sx,
+  sxContent,
 }: IBottomSheet) => {
   const theme = useTheme();
 
   return (
-    <Slide direction='up' timeout={1000} in={open} mountOnEnter unmountOnExit>
+    <Slide direction='up' timeout={1000} in={isOpen} mountOnEnter unmountOnExit>
       <Stack
         sx={{
           zIndex: theme.zIndex.appBar,
@@ -30,7 +31,7 @@ const BottomSheet = ({
       >
         <Stack sx={{ position: 'relative', height: '100%' }} justifyContent='flex-end'>
           {/* Full Screen Background*/}
-          <Fade timeout={1000} in={open}>
+          <Fade timeout={1000} in={isOpen}>
             <Box
               sx={{
                 position: 'absolute',
@@ -52,6 +53,7 @@ const BottomSheet = ({
               zIndex: 5,
               py: 4,
               px: 3,
+              ...sxContent,
             }}
           >
             {children}
