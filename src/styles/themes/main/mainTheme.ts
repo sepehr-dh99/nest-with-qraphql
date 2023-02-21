@@ -33,22 +33,23 @@ const mainTheme = createTheme({
       900: colors.secondary900,
     },
 
+    // TODO: change grey to gray
     grey: {
-      50: colors.grey50,
-      100: colors.grey100,
-      200: colors.grey200,
-      300: colors.grey300,
-      400: colors.grey400,
-      500: colors.grey500,
-      600: colors.grey600,
-      700: colors.grey700,
-      800: colors.grey800,
-      900: colors.grey900,
+      50: colors.gray50,
+      100: colors.gray100,
+      200: colors.gray200,
+      300: colors.gray300,
+      400: colors.gray400,
+      500: colors.gray500,
+      600: colors.gray600,
+      700: colors.gray700,
+      800: colors.gray800,
+      900: colors.gray900,
     },
 
     text: {
-      primary: colors.grey700,
-      secondary: colors.grey700,
+      primary: colors.gray700,
+      secondary: colors.gray700,
     },
   },
   typography: {
@@ -56,7 +57,7 @@ const mainTheme = createTheme({
     h3: {
       fontSize: '20px',
       fontWeight: 800,
-      color: colors.grey700,
+      color: colors.gray700,
     },
     subtitle1: {
       fontSize: '11px',
@@ -75,17 +76,17 @@ const mainTheme = createTheme({
     pLgLight: {
       fontSize: '16px',
       fontWeight: 300,
-      color: colors.grey700,
+      color: colors.gray700,
     },
     pSmRegular: {
       fontSize: '12px',
       fontWeight: 400,
-      color: colors.grey700,
+      color: colors.gray700,
     },
     label: {
       fontSize: '14px',
       fontWeight: 400,
-      color: colors.grey700,
+      color: colors.gray700,
     },
   },
   components: {

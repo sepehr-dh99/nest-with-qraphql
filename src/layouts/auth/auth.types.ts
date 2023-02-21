@@ -1,3 +1,3 @@
-export type TStyledLogoAnimation = {
+export interface IStyledLogoAnimation {
   animated?: 'true' | 'false';
-};
+}

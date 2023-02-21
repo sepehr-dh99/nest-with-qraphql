@@ -1,6 +1,11 @@
-import { Box } from '@mui/material';
 import LandingLogo from '@src/components/ui/landingLogo/landingLogo';
-import { StyledAuthLayout, StyledCurveShape, StyledLogoAnimation } from './auth.styles';
+import {
+  StyledAuthLayout,
+  StyledCurveShape,
+  StyledLogoAnimation,
+  bottomStyledCurveShapeStyles,
+  topStyledCurveShapeStyles,
+} from './auth.styles';
 import { useRouter } from 'next/router';
 
 const animatedRoutes = ['/login', '/otp'];
@@ -17,7 +22,8 @@ const AuthLayout = ({ children }: { children: JSX.Element | JSX.Element[] }) => 
         alt='curve shape bottom'
         height={275}
         width={275}
-        sx={{ top: 0, right: 0 }}
+        sx={topStyledCurveShapeStyles}
+        priority
       />
 
       {/* Shape Curve in bottom of page */}
@@ -26,7 +32,8 @@ const AuthLayout = ({ children }: { children: JSX.Element | JSX.Element[] }) => 
         alt='curve shape bottom'
         height={200}
         width={200}
-        sx={{ bottom: 0, left: 0 }}
+        sx={bottomStyledCurveShapeStyles}
+        priority
       />
 
       {/* Landing Logo */}

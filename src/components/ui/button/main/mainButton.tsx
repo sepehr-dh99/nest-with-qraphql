@@ -1,7 +1,7 @@
 import StyledMainButton from './mainButton.styles';
-import { MainButtonProps } from './mainButton.types';
+import { IMainButtonProps } from './mainButton.types';
 
-const MainButton = ({ children, ...props }: MainButtonProps) => {
+const MainButton = ({ children, ...props }: IMainButtonProps) => {
   return <StyledMainButton {...props}>{children}</StyledMainButton>;
 };
 

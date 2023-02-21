@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
-import Layout from "@src/layouts/Layout";
+import Layout from '@src/layouts/layout';
 
 const HomePage = () => {
   return <>Home Page</>;
@@ -8,7 +8,7 @@ const HomePage = () => {
 
 // TODO :  must be check !!!
 HomePage.getLayout = (page: ReactNode | any) => {
-  return <Layout variant="auth">{page}</Layout>;
+  return <Layout variant='auth'>{page}</Layout>;
 };
 
 export default HomePage;

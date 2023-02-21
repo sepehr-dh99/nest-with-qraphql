@@ -8,7 +8,7 @@ const otpInputGroupStyles: SxProps<Theme> = {
   justifyContent: 'space-around',
   columnGap: '10px',
   direction: 'ltr !important',
-  margin: '40px 0 35% 0',
+  margin: '11.5% 0 35% 0',
 
   input: {
     width: '38.67px',

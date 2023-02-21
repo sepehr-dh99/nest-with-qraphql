@@ -1,6 +1,6 @@
 import { alpha, Box, Slide, Fade, Stack, useTheme } from '@mui/material';
 import { bottomSheetContainerStyles } from './bottomSheet.styles';
-import { IBottomSheet } from './BottomSheet.types';
+import { IBottomSheet } from './bottomSheet.types';
 
 /**
  * TODO:  must be complete this code

@@ -2,10 +2,10 @@ import { Stack } from '@mui/material';
 import { styled } from '@mui/system';
 import Image from 'next/image';
 import { Box } from '@mui/material';
-import { TStyledLogoAnimation } from './auth.types';
+import { IStyledLogoAnimation } from './auth.types';
 
 // Auth Layout
-const StyledAuthLayout = styled(Stack)(({ theme }) => ({
+export const StyledAuthLayout = styled(Stack)(({ theme }) => ({
   justifyContent: 'space-around',
 
   position: 'relative',
@@ -18,12 +18,12 @@ const StyledAuthLayout = styled(Stack)(({ theme }) => ({
 }));
 
 // curve shapes
-const StyledCurveShape = styled(Image)(() => ({
+export const StyledCurveShape = styled(Image)(() => ({
   position: 'absolute',
   zIndex: 0,
 }));
 
-const StyledLogoAnimation = styled(Box)(({ animated = 'false' }: TStyledLogoAnimation) => ({
+export const StyledLogoAnimation = styled(Box)(({ animated = 'false' }: IStyledLogoAnimation) => ({
   animation: animated === 'true' ? `moveUp 1s ease-in-out both` : '',
   transition: 'all 2s',
   '@keyframes moveUp': {
@@ -36,4 +36,5 @@ const StyledLogoAnimation = styled(Box)(({ animated = 'false' }: TStyledLogoAnim
   },
 }));
 
-export { StyledAuthLayout, StyledCurveShape, StyledLogoAnimation };
+export const topStyledCurveShapeStyles = { top: 0, right: 0 };
+export const bottomStyledCurveShapeStyles = { bottom: 0, left: 0 };

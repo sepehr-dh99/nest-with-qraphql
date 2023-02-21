@@ -2,20 +2,9 @@ import { Box } from '@mui/system';
 import { DigitReg } from '@src/utils/regex';
 import { useMemo } from 'react';
 import { otpInputGroupStyles } from './otpInput.styles';
+import { IOtpInputProps } from './otpInput.types';
 
-/*
- * this component is inspired by the following tutorial:
- * https://dominicarrojado.com/posts/how-to-create-your-own-otp-input-in-react-and-typescript-with-tests-part-1/
- * so you can find a good documentaion of the component there! 😁🙌
- */
-
-export type OtpInputProps = {
-  value: string;
-  valueLength: number;
-  onChange: (value: string) => void;
-};
-
-export default function OtpInput({ value, valueLength, onChange }: OtpInputProps) {
+export default function OtpInput({ value, valueLength, onChange }: IOtpInputProps) {
   const valueItems = useMemo(() => {
     const valueArray = value.split('');
     const items: Array<string> = [];

@@ -1,6 +1,6 @@
 import { Theme } from '@emotion/react';
 import { SxProps } from '@mui/material';
-import colors from '../../../styles/themes/main/mainTheme.module.scss';
+import colors from '../../../../styles/themes/main/mainTheme.module.scss';
 
 export const otpBottomSheetContainerStyles: SxProps<Theme> = {
   height: '55vh',

@@ -1,18 +1,19 @@
-import React, { FormEvent, useState } from 'react';
+import React, { FormEvent } from 'react';
 
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
-import { AlertProps } from '@mui/material/Alert';
 import { IRPhoneNumberReg } from '@src/utils/regex';
-import { Snackbar, Stack, Typography } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
 import MainInput from '@src/components/ui/inputs/main/mainInput';
 import MainButton from '@src/components/ui/button/main/mainButton';
-import BottomSheet from '@src/components/ui/bottomSheet/BottomSheet';
-import StyledAlert from '@src/components/ui/alert/main/mainAlert.styles';
+import BottomSheet from '@src/components/ui/bottomSheet/bottomSheet';
 import { LoginSteps } from '@src/pages/login';
 import { bottomSheetStyles } from '@src/components/ui/bottomSheet/bottomSheet.styles';
-import { LoginSectionProps } from './login.types';
-import { loginBottomSheetContainerStyles, loginBottomSheetHeaderStyles } from './login.styles';
+import { ILoginSectionProps } from './loginSection.types';
+import {
+  loginBottomSheetContainerStyles,
+  loginBottomSheetHeaderStyles,
+} from './loginSection.styles';
 
 const validationSchema = Yup.object().shape({
   phoneNumber: Yup.string()
@@ -20,14 +21,7 @@ const validationSchema = Yup.object().shape({
     .matches(IRPhoneNumberReg, { message: 'شماره تماس را به درستی وارد کنید' }),
 });
 
-const SNACKBAR_AUTOCLOSE_MS = 3000;
-const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
-  return <StyledAlert elevation={6} ref={ref} variant='filled' {...props} />;
-});
-
-const LoginSection = ({ isOpen = true, setStep, setphoneNumber }: LoginSectionProps) => {
-  const [openSnackBar, setOpenSnackBar] = useState(false);
-
+const LoginSection = ({ isOpen = true, setStep, setphoneNumber }: ILoginSectionProps) => {
   const formik = useFormik({
     validationSchema,
     initialValues: {
@@ -42,18 +36,13 @@ const LoginSection = ({ isOpen = true, setStep, setphoneNumber }: LoginSectionPr
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     formik.handleSubmit();
-    setOpenSnackBar(!!formik.errors.phoneNumber);
-  };
-
-  const handleClose = () => {
-    setOpenSnackBar(false);
   };
 
   return (
     <BottomSheet sxContent={bottomSheetStyles} isOpen={isOpen} transparent>
       <Stack sx={loginBottomSheetContainerStyles}>
         <Stack spacing={2.5} sx={loginBottomSheetHeaderStyles}>
-          {/* TODO: Must be create Layout TRL provider */}
+          {/* TODO: Must be create Layout RTL provider */}
           <Typography variant='h3'>به هم میهن خوش آمدید</Typography>
           <Typography variant='pSmRegular'>
             لطفاً شماره موبایل‌ خود را وارد کنید تا کد فعال‌سازی برا‌یتان ارسال شود
@@ -77,14 +66,6 @@ const LoginSection = ({ isOpen = true, setStep, setphoneNumber }: LoginSectionPr
           </Stack>
         </form>
       </Stack>
-
-      {/* snackbar */}
-      {/* TODO: Fix positioning and width of the snackbar  */}
-      <Snackbar open={openSnackBar} autoHideDuration={SNACKBAR_AUTOCLOSE_MS} onClose={handleClose}>
-        <Alert severity='error' sx={{ width: '100%' }} onClose={handleClose}>
-          شماره همراه را به درستی وارد کنید
-        </Alert>
-      </Snackbar>
     </BottomSheet>
   );
 };

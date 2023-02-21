@@ -7,7 +7,7 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'src', 'styles')],
   },
-  minimumCacheTTL: 60, // Set the minimum cache TTL to 60 seconds
+  // minimumCacheTTL: 60, // Set the minimum cache TTL to 60 seconds
 };
 
 module.exports = nextConfig;

@@ -1,7 +1,7 @@
 import { Stack, Typography, useTheme } from '@mui/material';
-import BottomSheet from '@src/components/ui/bottomSheet/BottomSheet';
+import BottomSheet from '@src/components/ui/bottomSheet/bottomSheet';
 import { bottomSheetStyles } from '@src/components/ui/bottomSheet/bottomSheet.styles';
-import OtpCountdown from '@src/components/ui/countdown/otpCountdown/otpCountdown';
+import OtpCountdown from '@src/components/pages/login/otpSection/otpCountdown/otpCountdown';
 import OtpInput from '@src/components/ui/inputs/otpInput/otpInput';
 import { LoginSteps } from '@src/pages/login';
 import { useState } from 'react';
@@ -10,20 +10,20 @@ import {
   otpBottomSheetContainerStyles,
   otpBottomSheetHeaderStyles,
   otpLinkStyles,
-} from './otp.styles';
-import { OtpSectionProps } from './otp.types';
+} from './otpSection.styles';
+import { IOtpSectionProps } from './otpSection.types';
 
 const OTP_INPUT_COUNT = 6;
 
-const OtpSection = ({ phoneNumber, isOpen = false, setStep }: OtpSectionProps) => {
+const OtpSection = ({ phoneNumber, isOpen = false, setStep }: IOtpSectionProps) => {
   const theme = useTheme();
 
   const [otp, setOtp] = useState('');
   const onOtpChange = (value: string) => {
     setOtp(value);
 
-    // TODO: Send HTTP Request to validate user OTP
     if (value.trim().length === 6) {
+      // TODO: Send HTTP Request to validate user OTP
     }
   };
 
@@ -46,7 +46,6 @@ const OtpSection = ({ phoneNumber, isOpen = false, setStep }: OtpSectionProps) =
           </Stack>
         </Stack>
 
-        {/* FIXME: change input font family and input format to MUI Text field */}
         <Stack spacing={2} sx={otpBottomSheetBodyStyles}>
           <OtpInput value={otp} valueLength={OTP_INPUT_COUNT} onChange={onOtpChange} />
           <OtpCountdown />
