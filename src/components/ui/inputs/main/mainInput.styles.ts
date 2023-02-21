@@ -2,7 +2,6 @@
 import { styled } from '@mui/system';
 import { TextField } from '@mui/material';
 
-// TODO: Have extra Border on hover input !!!
 const StyledMainInput = styled(TextField)(({ theme }) => ({
   '& .MuiOutlinedInput-root': {
     borderRadius: '11px',

@@ -1,7 +1,7 @@
+import { ReactNode, useState } from 'react';
+import Layout from '@src/layouts/Layout';
 import LoginSection from '@src/components/pages/login/login';
 import OtpSection from '@src/components/pages/login/otp';
-import Layout from '@src/layouts/Layout';
-import { ReactNode, useState } from 'react';
 
 export enum LoginSteps {
   Login = 'Login',

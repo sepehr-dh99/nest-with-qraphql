@@ -1,19 +1,19 @@
+import { Box } from '@mui/system';
+import { DigitReg } from '@src/utils/regex';
+import { useMemo } from 'react';
+import { otpInputGroupStyles } from './otpInput.styles';
+
 /*
  * this component is inspired by the following tutorial:
  * https://dominicarrojado.com/posts/how-to-create-your-own-otp-input-in-react-and-typescript-with-tests-part-1/
  * so you can find a good documentaion of the component there! 😁🙌
  */
 
-import { useMemo } from 'react';
-import styles from './otpInput.module.scss';
-
 export type OtpInputProps = {
   value: string;
   valueLength: number;
   onChange: (value: string) => void;
 };
-
-export const RE_DIGIT = new RegExp(/^\d+$/);
 
 export default function OtpInput({ value, valueLength, onChange }: OtpInputProps) {
   const valueItems = useMemo(() => {
@@ -22,7 +22,7 @@ export default function OtpInput({ value, valueLength, onChange }: OtpInputProps
 
     for (let i = 0; i < valueLength; i++) {
       const char = valueArray[i];
-      RE_DIGIT.test(char) ? items.push(char) : items.push('');
+      DigitReg.test(char) ? items.push(char) : items.push('');
     }
 
     return items;
@@ -41,7 +41,7 @@ export default function OtpInput({ value, valueLength, onChange }: OtpInputProps
   const inputOnChange = (e: React.ChangeEvent<HTMLInputElement>, idx: number) => {
     const target = e.target;
     let targetValue = target.value.trim();
-    const isTargetValueDigit = RE_DIGIT.test(targetValue);
+    const isTargetValueDigit = DigitReg.test(targetValue);
 
     /* check if input is number or '' 
     empty Quotation or '' is used for deletion */
@@ -63,6 +63,10 @@ export default function OtpInput({ value, valueLength, onChange }: OtpInputProps
       onChange(newValue);
 
       if (!isTargetValueDigit) return;
+
+      // unfocus inputs at the end of inputs
+      if (newValue.trim().length === valueLength) target.blur();
+
       focusToNextInput(target);
     } else if (targetValueLength === valueLength) {
       // handle paste
@@ -112,22 +116,22 @@ export default function OtpInput({ value, valueLength, onChange }: OtpInputProps
 
   // TODO: change stylings to mui styled
   return (
-    <div className={styles['otp-group']}>
-      {valueItems.map((digit, idx) => (
+    <Box sx={otpInputGroupStyles}>
+      {valueItems.map((digit, index) => (
         <input
-          key={idx}
+          key={index}
           type='text'
           inputMode='numeric'
           autoComplete='one-time-code'
           pattern='\d{1}'
           maxLength={valueLength}
-          className={`${styles['otp-input']} IRANYekanX`}
           value={digit}
-          onChange={(e) => inputOnChange(e, idx)}
+          onChange={(e) => inputOnChange(e, index)}
           onKeyDown={inputOnKeyDown}
           onFocus={inputOnFocus}
+          autoFocus={index === 1}
         />
       ))}
-    </div>
+    </Box>
   );
 }
