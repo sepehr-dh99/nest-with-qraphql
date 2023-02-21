@@ -1,3 +1,5 @@
+import { SxProps, Theme } from '@mui/material';
+
 export interface IPleaseWaitSpinner {
-  sx: any;
+  sx: SxProps<Theme>;
 }

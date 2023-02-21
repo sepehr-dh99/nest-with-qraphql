@@ -1,4 +1,5 @@
 import { alpha, Box, Slide, Fade, Stack, useTheme } from '@mui/material';
+import { bottomSheetContainerStyles } from './bottomSheet.styles';
 import { IBottomSheet } from './BottomSheet.types';
 
 /**
@@ -29,7 +30,7 @@ const BottomSheet = ({
         }}
         justifyContent='flex-end'
       >
-        <Stack sx={{ position: 'relative', height: '100%' }} justifyContent='flex-end'>
+        <Stack sx={bottomSheetContainerStyles}>
           {/* Full Screen Background*/}
           <Fade timeout={1000} in={isOpen}>
             <Box
@@ -46,6 +47,7 @@ const BottomSheet = ({
           <Box
             sx={{
               bgcolor: theme.palette.background.paper,
+              ...sxContent,
               borderRadius: '20px 20px 0 0',
               position: 'relative',
               transition: '0.5s',
@@ -53,7 +55,6 @@ const BottomSheet = ({
               zIndex: 5,
               py: 4,
               px: 3,
-              ...sxContent,
             }}
           >
             {children}
