@@ -1,4 +1,4 @@
-import { TInlineStyles } from '@src/types/styles.type';
+import { TInlineStyles } from '@src/types/styles.types';
 import colors from '../../../../styles/themes/main/mainTheme.module.scss';
 
 const bottomSheetContainerSx: TInlineStyles = () => ({

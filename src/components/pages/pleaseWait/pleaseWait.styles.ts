@@ -1,4 +1,4 @@
-import { TInlineStyles } from '@src/types/styles.type';
+import { TInlineStyles } from '@src/types/styles.types';
 
 const spinnerSx: TInlineStyles = () => ({
   position: 'absolute',

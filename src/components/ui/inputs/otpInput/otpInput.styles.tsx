@@ -1,5 +1,5 @@
 import { styled } from '@mui/material';
-import { TInlineStyles } from '@src/types/styles.type';
+import { TInlineStyles } from '@src/types/styles.types';
 
 const groupSx: TInlineStyles = () => ({
   display: 'flex',

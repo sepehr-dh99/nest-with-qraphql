@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import { useRouter } from "next/router";
-import PleaseWaitPage from "@src/components/pages/pleaseWait/pleaseWait";
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import PleaseWaitPage from '@src/components/pages/pleaseWait/pleaseWait';
 
 // TODO: must be complete !!!
 const GuestGuard = ({ children }: { children: React.ReactElement }) => {
-  //   const { isLoggedIn } = useAuth();
+  // const { isLoggedIn } = useAuth();
 
   const isLoggedIn = false;
   const router = useRouter();
@@ -12,7 +12,7 @@ const GuestGuard = ({ children }: { children: React.ReactElement }) => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       if (isLoggedIn) {
-        router.push("/");
+        router.push('/');
       }
     }, 1000);
 

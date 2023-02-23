@@ -3,18 +3,15 @@ import { styled } from '@mui/material';
 import Image from 'next/image';
 import { Box } from '@mui/material';
 import { IStyledLogoAnimation } from './auth.types';
-import { TInlineStyles } from '@src/types/styles.type';
+import { TInlineStyles } from '@src/types/styles.types';
 
 // Auth Layout
 export const StyledAuthLayout = styled(Stack)(({ theme }) => ({
   justifyContent: 'space-around',
-
   position: 'relative',
-
   maxWidth: '48rem',
   margin: '0 auto',
   minHeight: '100vh',
-
   backgroundColor: theme.palette.primary.main,
 }));
 

@@ -1,5 +1,5 @@
 import { alpha, SxProps, Theme } from '@mui/material';
-import { TInlineStyles } from '@src/types/styles.type';
+import { TInlineStyles } from '@src/types/styles.types';
 
 const shadowSx: TInlineStyles = () => ({
   boxShadow: '0px -6px 31px 0px #00000036',

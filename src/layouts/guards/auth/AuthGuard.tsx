@@ -4,7 +4,7 @@ import PleaseWaitPage from '@src/components/pages/pleaseWait/pleaseWait';
 
 // TODO: must be complete !!!
 const AuthGuard = ({ children }: { children: React.ReactElement }) => {
-  //   const { isLoggedIn } = useAuth();
+  // const { isLoggedIn } = useAuth();
 
   const isLoggedIn = false;
   const router = useRouter();
@@ -19,6 +19,7 @@ const AuthGuard = ({ children }: { children: React.ReactElement }) => {
     return () => clearTimeout(timeoutId);
   }, [isLoggedIn]);
 
+  console.log('is user logged in: ' + isLoggedIn);
   if (!isLoggedIn) return <PleaseWaitPage />;
 
   return children;
