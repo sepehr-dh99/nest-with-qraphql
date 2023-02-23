@@ -2,6 +2,7 @@ import { ReactNode, useState } from 'react';
 import Layout from '@src/layouts/layout';
 import LoginSection from '@src/components/pages/login/loginSection/loginSection';
 import OtpSection from '@src/components/pages/login/otpSection/otpSection';
+import { ILayoutPage } from '@src/types/getLayout.types';
 
 export enum LoginSteps {
   Login = 'Login',
@@ -33,7 +34,7 @@ const LoginPage = () => {
 };
 
 // TODO :  must be check !!!
-LoginPage.getLayout = (page: ReactNode | any) => {
+LoginPage.getLayout = (page: ILayoutPage) => {
   return <Layout variant='guest'>{page}</Layout>;
 };
 

@@ -7,13 +7,11 @@ import { LoginSteps } from '@src/pages/login';
 import { useState } from 'react';
 import otpSectionStyles from './otpSection.styles';
 import { IOtpSectionProps } from './otpSection.types';
-import useAuth from '@src/utils/hook/useAuth';
 import { useRouter } from 'next/router';
 
 const OTP_INPUT_COUNT = 6;
 
 const OtpSection = ({ phoneNumber, isOpen = false, setStep }: IOtpSectionProps) => {
-  const { signIn } = useAuth();
   const router = useRouter();
 
   const [otp, setOtp] = useState('');
@@ -22,8 +20,6 @@ const OtpSection = ({ phoneNumber, isOpen = false, setStep }: IOtpSectionProps) 
 
     if (value.trim().length === OTP_INPUT_COUNT) {
       // TODO: Send HTTP Request to validate user OTP
-      const user = signIn({ otp: value, phoneNumber });
-      if (user) router.push('/', undefined, { shallow: true });
     }
   };
 

@@ -1,10 +1,9 @@
-import { ReactNode } from 'react';
-
 import PleaseWaitSpinner from '@src/components/ui/pleaseWaitSpinner/pleaseWaitSpinner';
 import PleaseWaitStyles from './pleaseWait.styles';
 
 import AuthLayout from '@src/layouts/auth/auth';
 import Layout from '@src/layouts/layout';
+import { ILayoutPage } from '@src/types/getLayout.types';
 
 const PleaseWaitPage = () => {
   return (
@@ -15,7 +14,7 @@ const PleaseWaitPage = () => {
 };
 
 // TODO :  must be check !!!
-PleaseWaitPage.getLayout = (page: ReactNode | any) => {
+PleaseWaitPage.getLayout = (page: ILayoutPage) => {
   return <Layout variant='auth'>{page}</Layout>;
 };
 

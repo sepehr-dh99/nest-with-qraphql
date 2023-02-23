@@ -19,7 +19,6 @@ const AuthGuard = ({ children }: { children: React.ReactElement }) => {
     return () => clearTimeout(timeoutId);
   }, [isLoggedIn]);
 
-  console.log('is user logged in: ' + isLoggedIn);
   if (!isLoggedIn) return <PleaseWaitPage />;
 
   return children;
