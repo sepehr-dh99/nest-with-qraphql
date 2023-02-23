@@ -8,7 +8,7 @@ import MainInput from '@src/components/ui/inputs/main/mainInput';
 import MainButton from '@src/components/ui/button/main/mainButton';
 import BottomSheet from '@src/components/ui/bottomSheet/bottomSheet';
 import { LoginSteps } from '@src/pages/login';
-import { bottomSheetStyles } from '@src/components/ui/bottomSheet/bottomSheet.styles';
+import bottomSheetStyles from '@src/components/ui/bottomSheet/bottomSheet.styles';
 import { ILoginSectionProps } from './loginSection.types';
 import loginSectionSyles from './loginSection.styles';
 
@@ -36,7 +36,7 @@ const LoginSection = ({ isOpen = true, setStep, setphoneNumber }: ILoginSectionP
   };
 
   return (
-    <BottomSheet sxContent={bottomSheetStyles} isOpen={isOpen} transparent>
+    <BottomSheet sxContent={bottomSheetStyles.shadowSx()} isOpen={isOpen} transparent>
       <Stack sx={loginSectionSyles.containerSx()}>
         <Stack spacing={2.5} sx={loginSectionSyles.headerSx()}>
           {/* TODO: Must be create Layout RTL provider */}
