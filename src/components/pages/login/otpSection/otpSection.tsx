@@ -5,12 +5,7 @@ import OtpCountdown from '@src/components/pages/login/otpSection/otpCountdown/ot
 import OtpInput from '@src/components/ui/inputs/otpInput/otpInput';
 import { LoginSteps } from '@src/pages/login';
 import { useState } from 'react';
-import {
-  otpBottomSheetBodyStyles,
-  otpBottomSheetContainerStyles,
-  otpBottomSheetHeaderStyles,
-  otpLinkStyles,
-} from './otpSection.styles';
+import otpSectionStyles from './otpSection.styles';
 import { IOtpSectionProps } from './otpSection.types';
 
 const OTP_INPUT_COUNT = 6;
@@ -29,8 +24,8 @@ const OtpSection = ({ phoneNumber, isOpen = false, setStep }: IOtpSectionProps) 
 
   return (
     <BottomSheet sxContent={bottomSheetStyles} isOpen={isOpen} transparent>
-      <Stack sx={otpBottomSheetContainerStyles}>
-        <Stack spacing={2.5} sx={otpBottomSheetHeaderStyles}>
+      <Stack sx={otpSectionStyles.bottomSheetContainerSx()}>
+        <Stack spacing={2.5} sx={otpSectionStyles.bottomSheetHeaderSx()}>
           <Typography variant='h3'>کد فعال‌سازی را وارد کنید.</Typography>
           <Stack spacing={1.5}>
             <Typography variant='pSmRegular'>
@@ -38,7 +33,7 @@ const OtpSection = ({ phoneNumber, isOpen = false, setStep }: IOtpSectionProps) 
             </Typography>
             <Typography
               variant='caption'
-              sx={otpLinkStyles}
+              sx={otpSectionStyles.linkSx()}
               onClick={(e) => setStep(LoginSteps.Login)}
             >
               تغییر شماره موبایل
@@ -46,7 +41,7 @@ const OtpSection = ({ phoneNumber, isOpen = false, setStep }: IOtpSectionProps) 
           </Stack>
         </Stack>
 
-        <Stack spacing={2} sx={otpBottomSheetBodyStyles}>
+        <Stack spacing={2} sx={otpSectionStyles.bottomSheetBodySx()}>
           <OtpInput value={otp} valueLength={OTP_INPUT_COUNT} onChange={onOtpChange} />
           <OtpCountdown />
         </Stack>

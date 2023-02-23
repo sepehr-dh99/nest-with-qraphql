@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import Image from 'next/image';
 import { Box, IconButton, Typography } from '@mui/material';
-import { otpCountdownContainer, otpCountdownText } from './otpCountdown.styles';
+import otpCountdownStyles from './otpCountdown.styles';
 
 const COUNTDOWN_INITIAL_VALUE = 10; // seconds
 
@@ -39,11 +39,11 @@ const OtpCountdown = () => {
   };
 
   return (
-    <Box sx={otpCountdownContainer}>
+    <Box sx={otpCountdownStyles.containerSx()}>
       {isCounterFinished ? (
-        <Typography sx={otpCountdownText}>کد فعال‌سازی را دریافت نکرده‌‌اید؟</Typography>
+        <Typography sx={otpCountdownStyles.textSx()}>کد فعال‌سازی را دریافت نکرده‌‌اید؟</Typography>
       ) : (
-        <Typography sx={otpCountdownText}>{getTime(value)}</Typography>
+        <Typography sx={otpCountdownStyles.textSx()}>{getTime(value)}</Typography>
       )}
       <IconButton disabled={!isCounterFinished} onClick={(e) => resendOTP()} color='primary'>
         <Image src='/Icons/reset.svg' alt='reset' width={16} height={16} />

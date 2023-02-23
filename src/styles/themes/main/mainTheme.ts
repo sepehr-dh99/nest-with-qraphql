@@ -1,7 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 
 import colors from './mainTheme.module.scss';
-//import { ICustomTypo } from "./mainTheme.types";
 
 const mainTheme = createTheme({
   direction: 'rtl',
@@ -33,8 +32,8 @@ const mainTheme = createTheme({
       900: colors.secondary900,
     },
 
-    // TODO: change grey to gray
-    grey: {
+    gray: {
+      main: colors.gray500,
       50: colors.gray50,
       100: colors.gray100,
       200: colors.gray200,

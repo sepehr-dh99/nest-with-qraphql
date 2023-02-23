@@ -1,14 +1,10 @@
 import LandingLogo from '@src/components/ui/landingLogo/landingLogo';
-import {
-  StyledAuthLayout,
-  StyledCurveShape,
-  StyledLogoAnimation,
-  bottomStyledCurveShapeStyles,
-  topStyledCurveShapeStyles,
-} from './auth.styles';
+import { StyledAuthLayout, StyledCurveShape, StyledLogoAnimation } from './auth.styles';
+import authStyles from './auth.styles';
+
 import { useRouter } from 'next/router';
 
-const animatedRoutes = ['/login', '/otp'];
+const animatedRoutes = ['/login'];
 
 const AuthLayout = ({ children }: { children: JSX.Element | JSX.Element[] }) => {
   const { pathname } = useRouter();
@@ -22,7 +18,7 @@ const AuthLayout = ({ children }: { children: JSX.Element | JSX.Element[] }) => 
         alt='curve shape bottom'
         height={275}
         width={275}
-        sx={topStyledCurveShapeStyles}
+        sx={authStyles.topCurveSx()}
         priority
       />
 
@@ -32,12 +28,12 @@ const AuthLayout = ({ children }: { children: JSX.Element | JSX.Element[] }) => 
         alt='curve shape bottom'
         height={200}
         width={200}
-        sx={bottomStyledCurveShapeStyles}
+        sx={authStyles.bottomCurveSx()}
         priority
       />
 
       {/* Landing Logo */}
-      <StyledLogoAnimation animated={isLogoAnimated ? 'true' : 'false'} sx={{ zIndex: 5 }}>
+      <StyledLogoAnimation animated={isLogoAnimated ? 'true' : 'false'} sx={authStyles.logoSx()}>
         <LandingLogo />
       </StyledLogoAnimation>
 

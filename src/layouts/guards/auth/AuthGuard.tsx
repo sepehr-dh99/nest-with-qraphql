@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { useRouter } from "next/router";
-import PleaseWaitPage from "@src/components/pages/pleaseWait/pleaseWait";
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import PleaseWaitPage from '@src/components/pages/pleaseWait/pleaseWait';
 
 // TODO: must be complete !!!
 const AuthGuard = ({ children }: { children: React.ReactElement }) => {
@@ -12,7 +12,7 @@ const AuthGuard = ({ children }: { children: React.ReactElement }) => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       if (!isLoggedIn) {
-        router.push("/login");
+        router.push('/login');
       }
     }, 1000);
 

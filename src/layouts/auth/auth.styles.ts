@@ -1,8 +1,9 @@
 import { Stack } from '@mui/material';
-import { styled } from '@mui/system';
+import { styled } from '@mui/material';
 import Image from 'next/image';
 import { Box } from '@mui/material';
 import { IStyledLogoAnimation } from './auth.types';
+import { TInlineStyles } from '@src/types/styles.type';
 
 // Auth Layout
 export const StyledAuthLayout = styled(Stack)(({ theme }) => ({
@@ -36,5 +37,14 @@ export const StyledLogoAnimation = styled(Box)(({ animated = 'false' }: IStyledL
   },
 }));
 
-export const topStyledCurveShapeStyles = { top: 0, right: 0 };
-export const bottomStyledCurveShapeStyles = { bottom: 0, left: 0 };
+const topCurveSx: TInlineStyles = () => ({ top: 0, right: 0 });
+const bottomCurveSx: TInlineStyles = () => ({ bottom: 0, left: 0 });
+const logoSx: TInlineStyles = () => ({ zIndex: 5 });
+
+const authStyles = {
+  topCurveSx,
+  bottomCurveSx,
+  logoSx,
+};
+
+export default authStyles;

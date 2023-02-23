@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import { styled } from '@mui/material';
 import MuiAlert from '@mui/material/Alert';
 
 const StyledAlert = styled(MuiAlert)(({ theme }) => ({

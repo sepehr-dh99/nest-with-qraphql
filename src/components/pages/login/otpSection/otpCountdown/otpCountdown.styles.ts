@@ -1,14 +1,20 @@
-import { SxProps } from '@mui/material';
-import { Theme } from '@mui/system';
+import { TInlineStyles } from '@src/types/styles.type';
 
-export const otpCountdownContainer: SxProps<Theme> = {
+const containerSx: TInlineStyles = () => ({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
   width: '100%',
-};
+});
 
-export const otpCountdownText: SxProps<Theme> = {
+const textSx: TInlineStyles = () => ({
   fontWeight: '500',
   fontSize: '12px',
+});
+
+const otpCountdownStyles = {
+  containerSx,
+  textSx,
 };
+
+export default otpCountdownStyles;

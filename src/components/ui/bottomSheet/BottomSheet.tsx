@@ -1,5 +1,5 @@
-import { alpha, Box, Slide, Fade, Stack, useTheme } from '@mui/material';
-import { bottomSheetContainerStyles } from './bottomSheet.styles';
+import { Box, Slide, Fade, Stack, useTheme } from '@mui/material';
+import bottomSheetStyles from './bottomSheet.styles';
 import { IBottomSheet } from './bottomSheet.types';
 
 /**
@@ -7,7 +7,6 @@ import { IBottomSheet } from './bottomSheet.types';
  * Handle close  and open
  * Handle animation open and close
  * Check styles and R&D for best implement
- * Create BottomSheet.styles.ts
  * */
 const BottomSheet = ({
   children,
@@ -21,50 +20,19 @@ const BottomSheet = ({
 
   return (
     <Slide direction='up' timeout={1000} in={isOpen} mountOnEnter unmountOnExit>
-      <Stack
-        sx={{
-          zIndex: theme.zIndex.appBar,
-          position: 'absolute',
-          inset: 0,
-          ...sx,
-        }}
-        justifyContent='flex-end'
-      >
-        <Stack sx={bottomSheetContainerStyles}>
+      <Stack sx={bottomSheetStyles.parentSx(theme, sx)}>
+        <Stack sx={bottomSheetStyles.containerSx()}>
           {/* Full Screen Background*/}
           <Fade timeout={1000} in={isOpen}>
-            <Box
-              sx={{
-                position: 'absolute',
-                inset: 0,
-                bgcolor: alpha(theme.palette.common.black, transparent ? 0 : 0.4),
-              }}
-              onClick={() => setOpen(false)}
-            />
+            <Box sx={bottomSheetStyles.bgSx(theme, transparent)} onClick={() => setOpen(false)} />
           </Fade>
 
           {/* Content */}
-          <Box
-            sx={{
-              bgcolor: theme.palette.background.paper,
-              ...sxContent,
-              borderRadius: '20px 20px 0 0',
-              position: 'relative',
-              transition: '0.5s',
-              maxHeight: '100vh',
-              zIndex: 5,
-              py: 4,
-              px: 3,
-            }}
-          >
-            {children}
-          </Box>
+          <Box sx={bottomSheetStyles.contentSx(theme, sxContent)}>{children}</Box>
         </Stack>
       </Stack>
     </Slide>
   );
-
-  return <></>;
 };
 
 export default BottomSheet;

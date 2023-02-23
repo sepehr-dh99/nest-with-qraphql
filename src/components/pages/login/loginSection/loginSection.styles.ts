@@ -1,10 +1,16 @@
-import { Theme } from '@emotion/react';
-import { SxProps } from '@mui/material';
+import { TInlineStyles } from '@src/types/styles.type';
 
-export const loginBottomSheetContainerStyles: SxProps<Theme> = {
+const containerSx: TInlineStyles = () => ({
   height: '55vh',
+});
+
+const headerSx: TInlineStyles = () => ({
+  mb: 3,
+});
+
+const loginSectionSyles = {
+  containerSx,
+  headerSx,
 };
 
-export const loginBottomSheetHeaderStyles: SxProps<Theme> = {
-  mb: 3,
-};
+export default loginSectionSyles;

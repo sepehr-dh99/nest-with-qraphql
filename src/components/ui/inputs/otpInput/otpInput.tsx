@@ -1,10 +1,12 @@
-import { Box } from '@mui/system';
+import { Box, useTheme } from '@mui/material';
 import { DigitReg } from '@src/utils/regex';
 import { useMemo } from 'react';
-import { otpInputGroupStyles } from './otpInput.styles';
+import otpInputStyles, { StyledOtpInput } from './otpInput.styles';
 import { IOtpInputProps } from './otpInput.types';
 
 export default function OtpInput({ value, valueLength, onChange }: IOtpInputProps) {
+  const theme = useTheme();
+
   const valueItems = useMemo(() => {
     const valueArray = value.split('');
     const items: Array<string> = [];
@@ -103,11 +105,10 @@ export default function OtpInput({ value, valueLength, onChange }: IOtpInputProp
     target.setSelectionRange(0, target.value.length);
   };
 
-  // TODO: change stylings to mui styled
   return (
-    <Box sx={otpInputGroupStyles}>
+    <Box sx={otpInputStyles.groupSx()}>
       {valueItems.map((digit, index) => (
-        <input
+        <StyledOtpInput
           key={index}
           type='text'
           inputMode='numeric'

@@ -1,22 +1,30 @@
-import { Theme } from '@emotion/react';
-import { SxProps } from '@mui/material';
+import { TInlineStyles } from '@src/types/styles.type';
 import colors from '../../../../styles/themes/main/mainTheme.module.scss';
 
-export const otpBottomSheetContainerStyles: SxProps<Theme> = {
+const bottomSheetContainerSx: TInlineStyles = () => ({
   height: '55vh',
-};
+});
 
-export const otpBottomSheetHeaderStyles: SxProps<Theme> = {
+const bottomSheetHeaderSx: TInlineStyles = () => ({
   mb: 3,
   alignItems: 'flex-start',
-};
+});
 
-export const otpBottomSheetBodyStyles: SxProps<Theme> = {
+const bottomSheetBodySx: TInlineStyles = () => ({
   alignItems: 'center',
-};
+});
 
-export const otpLinkStyles: SxProps<Theme> = {
+const linkSx: TInlineStyles = () => ({
   color: colors.secondary400,
   cursor: 'pointer',
   width: '35%',
+});
+
+const otpSectionStyles = {
+  bottomSheetContainerSx,
+  bottomSheetHeaderSx,
+  bottomSheetBodySx,
+  linkSx,
 };
+
+export default otpSectionStyles;

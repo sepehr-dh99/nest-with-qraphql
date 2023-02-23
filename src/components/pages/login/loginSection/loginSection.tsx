@@ -10,10 +10,7 @@ import BottomSheet from '@src/components/ui/bottomSheet/bottomSheet';
 import { LoginSteps } from '@src/pages/login';
 import { bottomSheetStyles } from '@src/components/ui/bottomSheet/bottomSheet.styles';
 import { ILoginSectionProps } from './loginSection.types';
-import {
-  loginBottomSheetContainerStyles,
-  loginBottomSheetHeaderStyles,
-} from './loginSection.styles';
+import loginSectionSyles from './loginSection.styles';
 
 const validationSchema = Yup.object().shape({
   phoneNumber: Yup.string()
@@ -40,8 +37,8 @@ const LoginSection = ({ isOpen = true, setStep, setphoneNumber }: ILoginSectionP
 
   return (
     <BottomSheet sxContent={bottomSheetStyles} isOpen={isOpen} transparent>
-      <Stack sx={loginBottomSheetContainerStyles}>
-        <Stack spacing={2.5} sx={loginBottomSheetHeaderStyles}>
+      <Stack sx={loginSectionSyles.containerSx()}>
+        <Stack spacing={2.5} sx={loginSectionSyles.headerSx()}>
           {/* TODO: Must be create Layout RTL provider */}
           <Typography variant='h3'>به هم میهن خوش آمدید</Typography>
           <Typography variant='pSmRegular'>
