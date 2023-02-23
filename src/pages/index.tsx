@@ -1,20 +1,15 @@
-import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "@src/styles/Home.module.css";
-import { useTheme } from "@emotion/react";
-import LandingLogo from "@src/components/ui/landingLogo/landingLogo";
+import { ReactNode } from 'react';
 
-const inter = Inter({ subsets: ["latin"] });
+import Layout from '@src/layouts/layout';
+import { ILayoutPage } from '@src/types/getLayout.types';
 
-export default function Home() {
-  const theme = useTheme();
+const HomePage = () => {
+  return <>Home Page</>;
+};
 
-  console.log("theme", theme);
+// TODO :  must be check !!!
+HomePage.getLayout = (page: ILayoutPage) => {
+  return <Layout variant='auth'>{page}</Layout>;
+};
 
-  return (
-    <>
-      <LandingLogo />
-    </>
-  );
-}
+export default HomePage;

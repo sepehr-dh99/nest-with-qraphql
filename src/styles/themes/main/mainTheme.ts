@@ -1,8 +1,9 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme } from '@mui/material/styles';
 
-import colors from "./mainTheme.module.scss";
+import colors from './mainTheme.module.scss';
 
 const mainTheme = createTheme({
+  direction: 'rtl',
   palette: {
     primary: {
       main: colors.primary500,
@@ -30,9 +31,78 @@ const mainTheme = createTheme({
       800: colors.secondary800,
       900: colors.secondary900,
     },
+
+    gray: {
+      main: colors.gray500,
+      50: colors.gray50,
+      100: colors.gray100,
+      200: colors.gray200,
+      300: colors.gray300,
+      400: colors.gray400,
+      500: colors.gray500,
+      600: colors.gray600,
+      700: colors.gray700,
+      800: colors.gray800,
+      900: colors.gray900,
+    },
+
+    text: {
+      primary: colors.gray700,
+      secondary: colors.gray700,
+    },
   },
   typography: {
-    fontFamily: "IRANYekanX",
+    htmlFontSize: 10,
+    fontFamily: 'IRANYekanX',
+    h3: {
+      fontSize: '2rem',
+      fontWeight: 800,
+      color: colors.gray700,
+    },
+    subtitle1: {
+      fontSize: '1.1rem',
+      fontWeight: 300,
+      component: 'span',
+      // TODO: change
+      color: colors.whiteText,
+    },
+    subtitle2: {
+      fontSize: '1.3rem',
+      fontWeight: 300,
+      component: 'span',
+      // TODO: change
+      color: colors.whiteText,
+    },
+    pLgLight: {
+      fontSize: '1.6rem',
+      fontWeight: 300,
+      color: colors.gray700,
+    },
+    pSmRegular: {
+      fontSize: '1.2rem',
+      fontWeight: 400,
+      color: colors.gray700,
+    },
+    label: {
+      fontSize: '1.4rem',
+      fontWeight: 400,
+      color: colors.gray700,
+    },
+  },
+  components: {
+    MuiButton: {
+      defaultProps: {
+        size: 'xLarge',
+      },
+      variants: [
+        {
+          props: { size: 'xLarge' },
+          style: {
+            padding: '1.575rem 3.2rem',
+          },
+        },
+      ],
+    },
   },
 });
 
