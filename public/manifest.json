@@ -5,13 +5,14 @@
   "scope": "/",
   "start_url": "/",
   "name": "Ham Mihan",
-  "short_name": "HM",
+  "short_name": "Ham Mihan",
   "description": "Ham Mihan Mobile PWA",
   "icons": [
     {
       "src": "/images/pwa/icon-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/images/pwa/icon-256x256.png",
