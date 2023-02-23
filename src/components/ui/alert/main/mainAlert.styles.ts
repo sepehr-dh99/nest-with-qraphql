@@ -4,7 +4,7 @@ import MuiAlert from '@mui/material/Alert';
 const StyledAlert = styled(MuiAlert)(({ theme }) => ({
   '& .MuiAlert-icon': {
     marginRight: '0',
-    marginLeft: '12px',
+    marginLeft: '1.2rem',
   },
 }));
 

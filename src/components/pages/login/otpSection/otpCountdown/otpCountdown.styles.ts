@@ -9,7 +9,7 @@ const containerSx: TInlineStyles = () => ({
 
 const textSx: TInlineStyles = () => ({
   fontWeight: '500',
-  fontSize: '12px',
+  fontSize: '1.2rem',
 });
 
 const otpCountdownStyles = {

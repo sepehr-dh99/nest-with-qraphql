@@ -4,7 +4,7 @@ import { TextField } from '@mui/material';
 
 const StyledMainInput = styled(TextField)(({ theme }) => ({
   '& .MuiOutlinedInput-root': {
-    borderRadius: '11px',
+    borderRadius: '1.1rem',
     overflow: 'hidden',
     borderColor: 'red',
 

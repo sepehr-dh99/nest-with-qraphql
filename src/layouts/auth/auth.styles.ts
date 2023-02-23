@@ -11,7 +11,7 @@ export const StyledAuthLayout = styled(Stack)(({ theme }) => ({
 
   position: 'relative',
 
-  maxWidth: '480px',
+  maxWidth: '48rem',
   margin: '0 auto',
   minHeight: '100vh',
 

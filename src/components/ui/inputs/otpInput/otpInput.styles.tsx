@@ -4,21 +4,21 @@ import { TInlineStyles } from '@src/types/styles.type';
 const groupSx: TInlineStyles = () => ({
   display: 'flex',
   width: '100%',
-  maxWidth: '360px',
+  maxWidth: '36rem',
   justifyContent: 'space-around',
-  columnGap: '10px',
+  columnGap: '1rem',
   direction: 'ltr !important',
   margin: '11.5% 0 35% 0',
 });
 
 export const StyledOtpInput = styled('input')(({ theme }) => ({
-  width: '38.67px',
-  height: '49px',
+  width: '3.867rem',
+  height: '4.9rem',
   border: 'none',
-  borderBottom: `3px solid ${theme.palette.gray[100]} `,
+  borderBottom: `0.3rem solid ${theme.palette.gray[100]} `,
   color: theme?.palette.gray[300],
   textAlign: 'center',
-  fontSize: '27px',
+  fontSize: '2.7rem',
 
   // TODO: change color to theme pallete
   '&:focus': {

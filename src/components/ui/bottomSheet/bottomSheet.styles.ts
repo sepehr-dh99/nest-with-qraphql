@@ -21,7 +21,7 @@ const parentSx: TInlineStyles<SxProps<Theme>> = (theme, sx) => ({
 
 const contentSx: TInlineStyles<SxProps<Theme>> = (theme, sxContent) => ({
   bgcolor: theme?.palette.background.paper,
-  borderRadius: '20px 20px 0 0',
+  borderRadius: '2rem 2rem 0 0',
   position: 'relative',
   transition: '0.5s',
   maxHeight: '100vh',

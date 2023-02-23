@@ -52,38 +52,39 @@ const mainTheme = createTheme({
     },
   },
   typography: {
+    htmlFontSize: 10,
     fontFamily: 'IRANYekanX',
     h3: {
-      fontSize: '20px',
+      fontSize: '2rem',
       fontWeight: 800,
       color: colors.gray700,
     },
     subtitle1: {
-      fontSize: '11px',
+      fontSize: '1.1rem',
       fontWeight: 300,
       component: 'span',
       // TODO: change
       color: colors.whiteText,
     },
     subtitle2: {
-      fontSize: '13px',
+      fontSize: '1.3rem',
       fontWeight: 300,
       component: 'span',
       // TODO: change
       color: colors.whiteText,
     },
     pLgLight: {
-      fontSize: '16px',
+      fontSize: '1.6rem',
       fontWeight: 300,
       color: colors.gray700,
     },
     pSmRegular: {
-      fontSize: '12px',
+      fontSize: '1.2rem',
       fontWeight: 400,
       color: colors.gray700,
     },
     label: {
-      fontSize: '14px',
+      fontSize: '1.4rem',
       fontWeight: 400,
       color: colors.gray700,
     },
@@ -97,7 +98,7 @@ const mainTheme = createTheme({
         {
           props: { size: 'xLarge' },
           style: {
-            padding: '15.75px 32px',
+            padding: '1.575rem 3.2rem',
           },
         },
       ],

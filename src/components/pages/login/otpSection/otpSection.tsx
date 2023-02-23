@@ -15,7 +15,7 @@ const OtpSection = ({ phoneNumber, isOpen = false, setStep }: IOtpSectionProps) 
   const onOtpChange = (value: string) => {
     setOtp(value);
 
-    if (value.trim().length === 6) {
+    if (value.trim().length === OTP_INPUT_COUNT) {
       // TODO: Send HTTP Request to validate user OTP
     }
   };
