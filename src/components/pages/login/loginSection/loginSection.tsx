@@ -57,7 +57,7 @@ const LoginSection = ({ isOpen = true, setStep, setphoneNumber }: ILoginSectionP
               value={formik.values.phoneNumber}
               error={!!formik.errors.phoneNumber}
             />
-            <MainButton loading type='submit' variant='contained' size='xLarge'>
+            <MainButton type='submit' variant='contained' size='xLarge'>
               مرحله بعدی
             </MainButton>
           </Stack>
