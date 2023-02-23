@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-const path = require("path");
+const path = require('path');
 
 const withPWA = require("next-pwa")({
   dest: "public",
@@ -12,7 +12,7 @@ const withPWA = require("next-pwa")({
 const nextConfig = {
   reactStrictMode: true,
   sassOptions: {
-    includePaths: [path.join(__dirname, "src", "styles")],
+    includePaths: [path.join(__dirname, 'src', 'styles')],
   },
   // minimumCacheTTL: 60, // Set the minimum cache TTL to 60 seconds
 };

@@ -1,3 +1,78 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "react", "jsx-a11y", "import"],
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    // Possible Errors
+    "no-console": "warn", // disallow the use of console
+    "no-debugger": "warn", // disallow the use of debugger
+    "no-alert": "warn", // disallow the use of alert
+
+    // Best Practices
+    "no-unused-vars": "warn", // disallow unused variables
+    "no-empty": ["warn", { "allowEmptyCatch": true }], // disallow empty block statements except for catch blocks
+    "no-use-before-define": ["error", { "functions": false, "classes": true }], // disallow the use of variables before they are defined
+
+    // Stylistic Issues
+    "semi": ["error", "always"], // require semicolons at the end of statements
+    "quotes": ["error", "single"], // enforce the consistent use of single quotes
+    "no-extra-parens": "warn", // disallow unnecessary parentheses
+    "eqeqeq": ["error", "always"], // require the use of === and !==
+    "no-trailing-spaces": "error", // disallow trailing whitespace
+
+    // React Plugin
+    "react/prop-types": "off", // prevent missing props validation in a React component definition
+    "react/react-in-jsx-scope": "off", // prevent React to be incorrectly marked as unused
+    "react/jsx-uses-react": "off", // prevent React to be incorrectly marked as unused in JSX
+    "react/jsx-uses-vars": "error", // prevent variables used in JSX to be incorrectly marked as unused
+    "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }], // restrict file extensions that may contain JSX
+    "react/jsx-no-undef": "error", // disallow undeclared variables in JSX
+    "react/jsx-props-no-spreading": "off", // disallow spreading of props on JSX elements
+
+    // TypeScript Plugin
+    "@typescript-eslint/explicit-module-boundary-types": "off", // enforce explicit return types on functions and class methods
+    "@typescript-eslint/no-explicit-any": "off", // disallow the use of the any type
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { "argsIgnorePattern": "^_" }
+    ], // disallow unused variables, except those whose names begin with _
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      { "functions": false, "classes": true, "variables": true }
+    ], // disallow the use of variables before they are defined, including functions and classes
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      { "allowExpressions": true }
+    ], // enforce explicit return types on functions and class methods, except those that return expressions
+    "@typescript-eslint/ban-ts-comment": [
+      "error",
+      {
+        "ts-expect-error": "allow-with-description",
+        "ts-ignore": "allow-with-description",
+        "ts-nocheck": "allow-with-description"
+      }
+    ] // disallow certain TypeScript comments (// @ts-<directive> and /* @ts-<directive> */) in code, and encourage the use of JSDoc instead. Allows the use of // @ts-ignore, // @ts-expect-error, and // @ts-nocheck with a description to explain the reason for using these directives.
+  }
 }
